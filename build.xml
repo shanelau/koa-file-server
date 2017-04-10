@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+
+<project basedir="." default="deploy" name="demo">
+        <property name="node" value="node"/>
+        <property name="npm" value="npm"/>
+        <property name="wget" value="wget"/>
+        <property name="script.url" value="http://auto-deploy-test.nos.netease.com/app.sh"/>
+        <property name="script.name" value="app.sh"/>
+
+        <target name="npmInstall">
+            <exec dir="./" executable="${npm}" failonerror="true">
+      			<arg line="install"/>
+                <arg line="--production"/>
+                <arg line="--registry=http://rnpm.hz.netease.com"/>
+    		</exec>
+        </target>
+        <target name="deploy">
+                <echo message="begin auto deploy......"/>
+                <antcall target="npmInstall"/>
+        </target>
+</project>
