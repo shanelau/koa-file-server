@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/pm2 start ./bin/www --name=koa-file",
+    "start": "./node_modules/.bin/pm2 start ./bin/www --name=koa-file -e ./logs/err.log -l ./logs/out.log",
     "stop" : "./node_modules/.bin/pm2 stop koa-file"
   },
   "dependencies": {

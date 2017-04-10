@@ -4,9 +4,7 @@
 <project basedir="." default="deploy" name="demo">
         <property name="node" value="node"/>
         <property name="npm" value="npm"/>
-        <property name="wget" value="wget"/>
-        <property name="script.url" value="http://auto-deploy-test.nos.netease.com/app.sh"/>
-        <property name="script.name" value="app.sh"/>
+        <property name="compress.dir" value="compressed"/>
 
         <target name="npmInstall">
             <exec dir="./" executable="${npm}" failonerror="true">
@@ -15,8 +13,15 @@
                 <arg line="--registry=http://rnpm.hz.netease.com"/>
     		</exec>
         </target>
+        <target name="cp">
+                <mkdir dir="${compress.dir}"/>
+                <exec executable="rsync">
+                    <arg line="-a --exclude '.svn' --exclude '.git' --exclude 'compressed' --exclude 'build.xml' ./ compressed/"/>
+                </exec>
+        </target>
         <target name="deploy">
                 <echo message="begin auto deploy......"/>
                 <antcall target="npmInstall"/>
+                <antcall target="cp"/>
         </target>
 </project>
