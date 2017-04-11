@@ -1,10 +1,14 @@
 {
   "name": "koa-file-server",
   "version": "0.0.0",
+  "main": "./bin/www",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/pm2 start ./bin/www --name=koa-file -e ./logs/err.log -l ./logs/out.log",
-    "stop" : "./node_modules/.bin/pm2 stop koa-file"
+    "preinstall": "./node_modules/.bin/pm2 install pm2-logrotate",
+    "start": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js",
+    "startProd": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --env production",
+    "stop" : "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
+    "startAttach": "node ./node_modules/.bin/pm2 startOrRestart --attach ecosystem.config.js"
   },
   "dependencies": {
     "babel-core": "^6.24.1",
