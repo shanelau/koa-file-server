@@ -6,6 +6,10 @@
         <property name="npm" value="npm"/>
         <property name="compress.dir" value="compressed"/>
 
+        <target name="clean">
+                <delete dir="${compress.dir}"/>
+        </target>
+
         <target name="npmInstall">
             <exec dir="./" executable="${npm}" failonerror="true">
       			<arg line="install"/>
@@ -21,6 +25,7 @@
         </target>
         <target name="deploy">
                 <echo message="begin auto deploy......"/>
+                <antcall target="clean"/>
                 <antcall target="npmInstall"/>
                 <antcall target="cp"/>
         </target>
