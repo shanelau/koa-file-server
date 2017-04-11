@@ -8,6 +8,7 @@
 
         <target name="clean">
                 <delete dir="${compress.dir}"/>
+                <delete dir="./node_modules"/>
         </target>
 
         <target name="npmInstall">

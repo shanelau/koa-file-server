@@ -6,7 +6,7 @@ module.exports = {
     name        : appName,
     script      : entryPoint,
     instances  : 1,
-    exec_mode  : "cluster",
+    exec_mode  : "fork",
     log_date_format: "YYYY-MM-DD HH:mm:ss",
     out_file: `./logs/log-out.log`,
     error_file: `./logs/log-err.log`,
