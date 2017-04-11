@@ -4,10 +4,9 @@
   "main": "./bin/www",
   "private": true,
   "scripts": {
-    "preinstall": "./node_modules/.bin/pm2 install pm2-logrotate",
     "start": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js",
     "startProd": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --env production",
-    "stop": "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
+    "stop" : "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
     "startAttach": "node ./node_modules/.bin/pm2 startOrRestart --attach ecosystem.config.js"
   },
   "dependencies": {
@@ -22,7 +21,6 @@
     "express": "~4.15.2",
     "morgan": "~1.8.1",
     "pm2": "^2.4.4",
-    "pm2-logrotate": "^2.2.0",
     "serve-favicon": "~2.4.2",
     "skipper": "^0.8.2"
   }
