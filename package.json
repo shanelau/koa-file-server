@@ -1,13 +1,13 @@
 {
   "name": "koa-file-server",
   "version": "0.0.0",
-  "main": "./bin/www",
+  "main": "./bin/www.js",
   "private": true,
   "scripts": {
-    "start": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js",
+    "start": "node $(which pm2) startOrRestart ecosystem.config.js",
     "startProd": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --env production",
     "stop" : "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
-    "startAttach": "node ./node_modules/.bin/pm2 startOrRestart --attach ecosystem.config.js"
+    "startAttach": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --attach"
   },
   "dependencies": {
     "babel-core": "^6.24.1",
@@ -20,7 +20,6 @@
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
-    "pm2": "2.2.3",
     "serve-favicon": "~2.4.2",
     "skipper": "^0.8.2"
   }

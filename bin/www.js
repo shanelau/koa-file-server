@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// #!/usr/bin/env node
 
 /**
  * Module dependencies.
@@ -89,3 +89,7 @@ function onListening() {
   console.log('Listening on ' + bind);
   console.log("ENV: ", process.env.PORT, process.args);
 }
+
+process.on('uncaughtException', function (err) {
+  console.log(err);
+})
