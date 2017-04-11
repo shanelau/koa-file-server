@@ -4,10 +4,10 @@
   "main": "./bin/www",
   "private": true,
   "scripts": {
-    "start": "node pm2 startOrRestart ecosystem.config.js",
-    "startProd": "node pm2 startOrRestart ecosystem.config.js --env production",
-    "stop" : "node pm2 stop ecosystem.config.js",
-    "startAttach": "node pm2 startOrRestart --attach ecosystem.config.js"
+    "start": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js",
+    "startProd": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --env production",
+    "stop" : "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
+    "startAttach": "node ./node_modules/.bin/pm2 startOrRestart --attach ecosystem.config.js"
   },
   "dependencies": {
     "babel-core": "^6.24.1",
@@ -20,7 +20,7 @@
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
-    "pm2": "^2.4.4",
+    "pm2": "2.2.3",
     "serve-favicon": "~2.4.2",
     "skipper": "^0.8.2"
   }
