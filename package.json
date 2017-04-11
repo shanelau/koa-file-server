@@ -1,13 +1,13 @@
 {
-  "name": "koa-file-server",
+  "name": "koa-file",
   "version": "0.0.0",
   "main": "./bin/www.js",
   "private": true,
   "scripts": {
     "start": "node $(which pm2) startOrRestart ecosystem.config.js",
-    "startProd": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --env production",
-    "stop" : "node ./node_modules/.bin/pm2 stop ecosystem.config.js",
-    "startAttach": "node ./node_modules/.bin/pm2 startOrRestart ecosystem.config.js --attach"
+    "startProd": "node $(which pm2) startOrRestart ecosystem.config.js --env production",
+    "stop" : "$(which pm2) delete koa-file",
+    "startAttach": "node $(which pm2) startOrRestart ecosystem.config.js"
   },
   "dependencies": {
     "babel-core": "^6.24.1",

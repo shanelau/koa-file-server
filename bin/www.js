@@ -87,7 +87,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   console.log('Listening on ' + bind);
-  console.log("ENV: ", process.env.PORT, process.args);
 }
 
 process.on('uncaughtException', function (err) {
