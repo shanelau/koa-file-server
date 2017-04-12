@@ -6,7 +6,7 @@
   "scripts": {
     "start": "pm2 startOrRestart ecosystem.config.js",
     "startProd": "node $(which pm2) startOrRestart ecosystem.config.js --env production",
-    "stop" : "pm2 delete koa-file",
+    "stop" : "pm2 delete ecosystem.config.js",
     "startAttach": "node $(which pm2) startOrRestart ecosystem.config.js"
   },
   "dependencies": {
