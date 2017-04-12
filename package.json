@@ -4,9 +4,9 @@
   "main": "./bin/www.js",
   "private": true,
   "scripts": {
-    "start": "node $(which pm2) startOrRestart ecosystem.config.js",
+    "start": "pm2 startOrRestart ecosystem.config.js",
     "startProd": "node $(which pm2) startOrRestart ecosystem.config.js --env production",
-    "stop" : "$(which pm2) delete koa-file",
+    "stop" : "pm2 delete koa-file",
     "startAttach": "node $(which pm2) startOrRestart ecosystem.config.js"
   },
   "dependencies": {
