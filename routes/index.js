@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: `Express env: ${process.env.NODE_ENV}` });
+  res.render('index', { title: `Express env: ${process.env.NODE_ENV}`, data: "hello world" });
 });
 
 router.post('/upload', function(req, res, next){
