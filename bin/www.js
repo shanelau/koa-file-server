@@ -92,3 +92,6 @@ function onListening() {
 process.on('uncaughtException', function (err) {
   console.log(err);
 })
+
+
+module.exports = server;

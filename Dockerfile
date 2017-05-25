@@ -16,4 +16,4 @@ ADD package.json /www/
 
 ADD . /www/
 
-CMD ["bin/www.js"]
+CMD ["bin/www-babel.js"]

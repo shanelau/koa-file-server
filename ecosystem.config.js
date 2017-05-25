@@ -19,5 +19,17 @@ module.exports = {
        "NODE_ENV": "production"
     }
   },
-  ]
+  ],
+    "dev" : {
+      "user" : "node",
+      "host" : "212.83.163.1",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:repo.git",
+      "path" : "/var/www/development",
+      "ssh_options": ["StrictHostKeyChecking=no", "PasswordAuthentication=no"],
+      "post-deploy" : "pm2 startOrRestart ecosystem.json --env dev",
+      "env"  : {
+        "NODE_ENV": "staging"
+      }
+    }
 }
